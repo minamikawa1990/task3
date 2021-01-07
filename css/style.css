@@ -5,3 +5,14 @@ li {
 #dones {
    margin: 10px 10px;
 }
+
+.complete {
+    visibility: hidden;
+}
+.all {
+    visibility: hidden;
+}
+/* .working {
+    visibility: hidden;
+} */
+
