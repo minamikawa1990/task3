@@ -1,6 +1,58 @@
 'use strict'
 
 {
+
+    //追加ボタンを押下時にタスクを登録できる
+
+    const add = document.getElementById('add');
+    const input =document.getElementById('input');
+    const tbodyTasks = document.getElementById('tasks');
+
+    // tbodyにtr要素を追加
+    add.addEventListener('click' , () => {
+        const trItem = document.createElement('tr');
+        tbodyTasks.appendChild(trItem);
+        const id = document.createElement('td');
+        const comment= document.createElement('td');
+        id.textContent = '1';
+        comment.textContent = input.value;
+        const btn_working = document.createElement('button');
+        const btn_remove = document.createElement('button');
+        btn_working.textContent = "作業中";
+        btn_remove.textContent = "削除";
+        trItem.appendChild(id);
+        trItem.appendChild(comment);
+        trItem.appendChild(btn_working);
+        trItem.appendChild(btn_remove);
+        input.value = "";
+        console.log(trItem);
+       
+    })
+
+    
+
+   
+
+    
+    
+
+    
+
+    // function btnChange () {
+    //     　const btn_working = document.createElement('button');
+    //       const workings = document.getElementsByClassName('working');
+    //     　btn_working.textContent = '作業中';
+    //     　workings[0].addEventListener('click', () => {
+    //     　　if (btn_working.textContent === '作業中') {
+    //     　　　btn_working.textContent = '完了';
+    //     　　} else {
+    //     　　　btn_working.textContent = '作業中';
+    //     　　}
+    //     　});
+    //     　return btn_working;
+    //     };
+    
+
     // const radio_all = document.getElementById('radio_all');
     // const radio_working = document.getElementById('radio_working');
     // const radio_complete = document.getElementById('radio_complete');
@@ -12,13 +64,15 @@
     // const btn_working = document.createElement('button');
     // const btn_remove = document.createElement('button');
 
-    // function change(){
-    //     if(btn_working.textContent === '完了'){
-    //         btn_working.textContent = '作業中';
-    //     }else if(btn_working.textContent === '作業中'){
-    //        btn_working.textContent = "完了";
-    //    }
-    // }
+    
+    // // btn_working.addEventListener('click', () => {
+    // //     if(btn_working.textContent === '完了'){
+    // //         btn_working.textContent = '作業中';
+    // //     }else if(btn_working.textContent === '作業中'){
+    // //        btn_working.textContent = "完了";
+    // //    }
+    // // })
+    
 
 
     // // radioボタンの仕分け関数
@@ -41,7 +95,7 @@
 
     //     }
     // }
-    // // ここまで
+    
    
     // add.addEventListener('click', () => {
 
@@ -50,49 +104,25 @@
     //     const btn_remove = document.createElement('button');
     
     //     li.textContent = input_task.value;
-    //     btn_working.textContent = "完了";
+    //     btn_working.textContent = "作業中";
     //     btn_remove.textContent = "削除"
     //     btn_working.classList.add("working");
     //     ul.appendChild(li);
     //     li.appendChild(btn_working);
     //     li.appendChild(btn_remove);
+    //     console.log(btn_working);
+    //     console.log(btn_remove);
         
     //     input_task.value = "";
     // })
 
-    // const working = document.getElementsByClassName('working');
+    // const workings = document.getElementsByClassName('working');
+
     
-    // working.addEventListener('click', () => {
-    //     change();
-    // })
+    // btnChange();
+    
+    
 
-    const ul = document.querySelector('ul');
-    const btn = document.getElementById('btn');
-    const input = document.getElementById('input')
-    const radio_input = document.getElementById('radio_input');
-    const li_list = document.querySelector('li');
-    const test = document.getElementsByClassName('working');
-    const li = document.createElement('li');
-
-
-    btn.addEventListener('click', () => {
-        const li = document.createElement('li');
-        li.textContent = input.value;
-        ul.appendChild(li);
-        li.classList.add('working');
-        console.log(test[0]);
-    });
-
-    radio_input.addEventListener('click', () => {
-        if(li.classList.contains('working') === true) {
-            li.textContent = "うんこ";
-        }
-        const li = document.createElement('li');
-        li.textContent = input.value;
-        ul.appendChild(li);
-        li.classList.add('working');
-        
-    });
 
 
 
